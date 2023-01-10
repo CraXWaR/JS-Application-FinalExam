@@ -4,8 +4,8 @@ import { html } from "../lib.js";
 const dashboardTemp = (jobs) => html`
 <section id="dashboard">
     <h2>Job Offers</h2>
-    ${jobs.length == 0 ? html`<h2>No offers yet.</h2>` 
-    : jobs.map(jobsCard)}
+    ${jobs.length == 0 ? html`<h2>No offers yet.</h2>`
+        : jobs.map(jobsCard)}
 </section>`;
 
 const jobsCard = (job) => html`

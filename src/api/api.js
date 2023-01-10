@@ -13,7 +13,7 @@ async function request(url, method, data) {
         options.headers['Content-Type'] = 'application/json';
         options.body = JSON.stringify(data);
     }
-    
+
     const userData = getUserData();
     if (userData) {
         options.headers['X-Authorization'] = userData.accessToken;
@@ -21,7 +21,7 @@ async function request(url, method, data) {
 
     try {
         const res = await fetch(host + url, options);
-    
+
         if (res.ok == false) {
             if (res.status == 403) {
                 clearUserData();
@@ -29,7 +29,7 @@ async function request(url, method, data) {
             const error = await res.json();
             throw new Error(error.message);
         }
-    
+
         if (res.status == 204) {
             return res;
         } else {

@@ -52,20 +52,20 @@ const createTemp = (onSubmit) => html`
 `;
 
 export function createView(ctx) {
-    
+
     async function onSubmit(e) {
         e.preventDefault();
         const formData = new FormData(e.target);
 
         const job = {
             title: formData.get('title'),
-            imageUrl: formData.get('imageUrl'), 
-            category: formData.get('category'), 
-            description: formData.get('description'), 
-            requirements: formData.get('requirements'), 
+            imageUrl: formData.get('imageUrl'),
+            category: formData.get('category'),
+            description: formData.get('description'),
+            requirements: formData.get('requirements'),
             salary: formData.get('salary')
         }
-       
+
         if (job.title == '' || job.imageUrl == '' || job.category == '' || job.description == '' || job.requirements == '' || job.salary == '') {
             console.log(job);
             return alert('All field are required!');

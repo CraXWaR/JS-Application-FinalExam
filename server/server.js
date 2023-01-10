@@ -1,15 +1,15 @@
 (function (global, factory) {
   typeof exports === "object" && typeof module !== "undefined"
     ? (module.exports = factory(
-        require("http"),
-        require("fs"),
-        require("crypto")
-      ))
+      require("http"),
+      require("fs"),
+      require("crypto")
+    ))
     : typeof define === "function" && define.amd
-    ? define(["http", "fs", "crypto"], factory)
-    : ((global =
+      ? define(["http", "fs", "crypto"], factory)
+      : ((global =
         typeof globalThis !== "undefined" ? globalThis : global || self),
-      (global.Server = factory(global.http, global.fs, global.crypto)));
+        (global.Server = factory(global.http, global.fs, global.crypto)));
 })(this, function (http, fs, crypto) {
   "use strict";
 
@@ -349,16 +349,16 @@
 
   const data = fs__default["default"].existsSync("./data")
     ? fs__default["default"].readdirSync("./data").reduce((p, c) => {
-        const content = JSON.parse(
-          fs__default["default"].readFileSync("./data/" + c)
-        );
-        const collection = c.slice(0, -5);
-        p[collection] = {};
-        for (let endpoint in content) {
-          p[collection][endpoint] = content[endpoint];
-        }
-        return p;
-      }, {})
+      const content = JSON.parse(
+        fs__default["default"].readFileSync("./data/" + c)
+      );
+      const collection = c.slice(0, -5);
+      p[collection] = {};
+      for (let endpoint in content) {
+        p[collection][endpoint] = content[endpoint];
+      }
+      return p;
+    }, {})
     : {};
 
   const actions = {

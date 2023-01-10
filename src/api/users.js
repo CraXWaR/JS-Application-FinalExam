@@ -2,7 +2,7 @@ import { clearUserData, setUserData } from "../util.js";
 import { get, post } from "./api.js";
 
 export async function login(email, password) {
-const result = await post('/users/login', { email, password });
+    const result = await post('/users/login', { email, password });
 
     const userData = {
         id: result._id,

@@ -42,7 +42,7 @@ export async function jobDetails(ctx) {
     const job = await getJobDetails(ctx.params.id);
     const userData = getUserData();
     const owner = userData?.id == job._ownerId;
-    
+
     async function onDelete() {
         const choice = confirm('Are u sure u want to delist this job?');
 
@@ -55,7 +55,7 @@ export async function jobDetails(ctx) {
     let applications = 0;
 
     function onApply() {
-        applications ++
+        applications++
         document.getElementById('apply-btn').style.display = 'none';
         document.getElementById('applications').textContent = applications;
     }

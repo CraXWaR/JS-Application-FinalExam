@@ -59,10 +59,10 @@ export async function editView(ctx) {
 
         const job = {
             title: formData.get('title'),
-            imageUrl: formData.get('imageUrl'), 
-            category: formData.get('category'), 
-            description: formData.get('description'), 
-            requirements: formData.get('requirements'), 
+            imageUrl: formData.get('imageUrl'),
+            category: formData.get('category'),
+            description: formData.get('description'),
+            requirements: formData.get('requirements'),
             salary: formData.get('salary')
         }
         console.log(job);
@@ -75,6 +75,6 @@ export async function editView(ctx) {
         e.target.reset();
         ctx.page.redirect('/dashboard/' + ctx.params.id);
     }
-    
+
     ctx.render(editTemp(job, onSubmit));
 }

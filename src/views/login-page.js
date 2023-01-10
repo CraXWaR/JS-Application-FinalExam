@@ -22,7 +22,7 @@ const loginTemp = (onSubmit) => html`
 </section>`;
 
 export function loginView(ctx) {
-    
+
     async function onSubmit(e) {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -38,6 +38,6 @@ export function loginView(ctx) {
         ctx.updateNav();
         ctx.page.redirect('/dashboard')
     }
-    
+
     ctx.render(loginTemp(onSubmit));
 }
